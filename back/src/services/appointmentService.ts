@@ -25,7 +25,8 @@ export const createAppointment = async( turno: IAppointmentDto)=>{
         const newAppointment= {
             date: turno.date,
             time: turno.time,
-            userId: turno.userId
+            userId: turno.userId, 
+            description: turno.description
         };
         const appointmentCreate = await AppointmentModel.create(newAppointment)
         const result = await AppointmentModel.save(appointmentCreate)

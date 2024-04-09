@@ -17,6 +17,9 @@ export class Appointment {
     @Column()
     userId: number
 
+    @Column()
+    description: string
+
     @Column({
         type: 'enum',
         enum: ['active', 'cancelled'],
