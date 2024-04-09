@@ -73,8 +73,7 @@
     {
         "date": "2024-04-02",
         "time": "10:30 PM",
-        "userId": 1,
-        "status": "active"
+        "userId": 1
     }
     ```
 
