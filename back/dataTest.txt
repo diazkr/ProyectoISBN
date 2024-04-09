@@ -1,0 +1,49 @@
+{
+    "name": "Jane Smith",
+    "email": "janesmith@example.com",
+    "birthdate": "1985-07-15",
+    "nDni": 987654321,
+    "username": "janesmith85",
+    "password": "securepassword"
+}
+
+{
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "birthdate": "1995-03-20",
+    "nDni": 555555555,
+    "username": "alicej",
+    "password": "strongpassword"
+}
+
+
+{
+    "name": "Michael Brown",
+    "email": "michael@example.com",
+    "birthdate": "1980-09-10",
+    "nDni": 123123123,
+    "username": "michaelb",
+    "password": "michaelpassword"
+}
+
+
+/////////////
+
+{
+    "date": "2024-04-01",
+    "time": "10:00 AM",
+    "userId": 1,
+    "status": "active"
+}
+{
+    "date": "2024-04-02",
+    "time": "2:30 PM",
+    "userId": 2,
+    "status": "cancelled"
+}
+{
+    "date": "2024-04-03",
+    "time": "11:45 AM",
+    "userId": 3,
+    "status": "active"
+}
