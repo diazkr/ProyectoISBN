@@ -16,10 +16,12 @@ export const createCredential = async (credential: {username: string, password:s
     return credentialCreate;
 }
 
-export const verifyCredential = async (credential: {user: string, password:string}) =>{
-    const foundCredential = await CredentialModel.findOne({ where: { username: credential.user } });
+export const verifyCredential = async (credential: {username: string, password:string}) =>{
 
-        if (foundCredential && foundCredential.password === credential.password) {
+    const {username, password} = credential;
+    const foundCredential = await CredentialModel.findOneBy({username});
+
+        if (foundCredential && foundCredential.password === password && foundCredential.username=== username) {
             const user = await UserModel.findOne({ where: { credential: foundCredential } });
             
             const response = {login: true, user: user}
