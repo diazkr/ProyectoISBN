@@ -73,7 +73,8 @@
     {
         "date": "2024-04-02",
         "time": "10:30 PM",
-        "userId": 1
+        "userId": 1, 
+        "description": "medicina general"
     }
     ```
 
