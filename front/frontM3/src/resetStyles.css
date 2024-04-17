@@ -1,0 +1,35 @@
+/* Reset de estilos */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol,
+li,
+blockquote,
+dl, dd, dt,
+figure,
+pre,
+hr,
+fieldset, legend,
+button,
+input,
+textarea,
+th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* Quitar subrayado de los enlaces */
+a {
+  text-decoration: none;
+}
+
+/* Estilos adicionales para el reset */
+body {
+  line-height: 1;
+}
+
+ul, ol {
+  list-style: none;
+}

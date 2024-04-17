@@ -1,0 +1,40 @@
+.mainContainer{
+    margin-top: 40px !important;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer p{
+    font-size: 1.4em;
+    color: #296775;
+    font-weight: 500;
+}
+
+.mainContainer img{
+    width: 20vh;
+    opacity: 0.6;
+
+
+}
+
+.mainContainer button{
+    padding: 0.5em;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    margin: 1em;
+    background-color:#3ca9b8;
+    color: aliceblue;
+    font-weight: 600;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+    
+}
+
+.classLink{
+
+    text-decoration: none; /* Quita la subrayado del enlace */
+    color: inherit; /* Usa el color del texto por defecto */
+}

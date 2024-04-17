@@ -3,5 +3,6 @@ export interface IAppointmentDto{
     time: string,
     userId: number, 
     description: string,
+    especialist: string
 }
     

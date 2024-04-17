@@ -20,6 +20,9 @@ export class Appointment {
     @Column()
     description: string
 
+    @Column()
+    especialist: string
+    
     @Column({
         type: 'enum',
         enum: ['active', 'cancelled'],

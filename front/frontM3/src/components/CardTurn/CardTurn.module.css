@@ -1,0 +1,186 @@
+.container{
+    background-color: #d9f3f4d8;
+    margin: 0 auto;
+    width: 85vw;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Añadimos sombra */
+    align-items: center;
+    margin-bottom: 0.8em;
+
+}
+
+.container:hover {
+    transform: translateY(-1px); /* Efecto hover: levantar ligeramente */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Aumentar la sombra */
+}
+.containerCell {
+    display: flex;
+    justify-content: start;
+    padding-left: 0.3em;
+    align-items: center; /* Cambiado de baseline a center */
+    position: relative;
+}
+.containerCell p{
+    margin: 0; /* Elimina el margen predeterminado del párrafo */
+    text-align: center; /* Alinea el texto horizontalmente */
+    display: inline-block; /* Permite centrar verticalmente el texto */
+    vertical-align: middle; 
+    color: #19343d;
+    font-weight: 400;
+    margin-left: 0.5em;
+}
+
+.containerCell:not(:nth-last-child(-n+3))::after {
+    content: ''; /* Agregamos contenido vacío */
+    position: absolute; /* Hacemos que la posición sea absoluta */
+    top: 0; /* Lo posicionamos arriba */
+    right: -2px; /* Lo posicionamos a la derecha con un pequeño margen */
+    height:90%; /* Le damos la altura igual al contenedor */
+    margin-top: 0.1em;
+    width: 2px; /* Definimos el ancho de la barra separadora */
+    background-color: #296775a6; /* Color de la barra separadora */
+}
+
+.divDate { grid-area: 1 / 1 / 2 / 3; }
+.divHour { grid-area: 1 / 3 / 2 / 5; }
+.divState {grid-area: 1 / 5 / 2 / 7; }
+.divEspecialist { grid-area: 1 / 7 / 2 / 10; }
+.divVerMas { 
+    grid-area: 1 / 10 / 2 / 12; 
+    padding-bottom: 0.8em;
+    display: flex;
+    justify-content: end;
+}
+.divButton { 
+    grid-area: 1 / 12 / 2 / 13; 
+    padding-bottom: 0.8em;
+}
+
+
+/* APLICANDO LOS MEDIA QUERY */
+
+@media (max-width: 1100px) {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+        padding-left: 2em !important;
+    
+    }
+
+
+    .divDate { grid-area: 1 / 1 / 2 / 2;}
+    .divHour { grid-area: 1 / 2 / 2 / 3; }
+    .divState {grid-area: 2 / 1 / 3 / 2; }
+    .divEspecialist {  grid-area: 2 / 2 / 3 / 3;}
+    .divVerMas { grid-area: 3 / 1 / 4 / 2;
+    }
+    .divButton { grid-area: 3 / 2 / 4 / 3;
+        display: flex;
+        justify-content: start;
+        
+    }
+
+    .containerCell:not(:nth-last-child(-n+3))::after {
+        width: 0px; 
+    }
+}
+
+
+
+
+
+
+.botonCancelar{
+
+    background-color: #309aaa;
+    border: #2955617a 1px solid;
+    color: aliceblue;
+    font-weight: 500;
+    padding: 0.2em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    border-radius: 8px;
+    margin-top: 0.6em;
+    margin-left: 0.5em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+    margin-right: 0.3em;
+}
+.botonCancelarDisable{
+    background-color: #89d5dc2c;
+    border: #319ba950 1px solid;
+    color: #319ba946;
+    font-weight: 500;
+    padding: 0.2em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    border-radius: 8px;
+    margin-top: 0.6em;
+    margin-left: 0.5em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+    margin-right: 0.3em;
+}
+
+.botonCancelar:hover {
+    background-color: #2b7f8f;
+    color: aliceblue;
+    transform: scale(0.9);
+
+}
+
+.iconTurn{
+    color: #084357c4;
+    font-size: 1.3em;
+    margin-left: 0.1em;
+}
+
+.statusActive{
+    background-color:#89dca5d5 ;
+    border-radius: 8px;
+    padding: 0.2em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+}
+
+.statusCancelled{
+    background-color: #dc9689d0;
+    border-radius: 8px;
+    padding: 0.2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
+
+.botonVerDetalles{
+
+    background-color: #89d5dc2c;
+    border: #319ca9 1px solid;
+    color: #319ca9;
+    font-weight: 600;
+    padding: 0.2em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    border-radius: 8px;
+    margin-top: 0.6em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+    margin-right: 1em;
+}
+
+
+.botonVerDetalles:hover {
+    background-color: #2b7f8f;
+    color: aliceblue;
+    transform: scale(0.98);
+
+}

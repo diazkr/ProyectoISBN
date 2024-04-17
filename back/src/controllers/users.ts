@@ -22,7 +22,7 @@ export const getUsersByIdController = async (req: Request, res: Response) => {
         res.status(200).json(byId );
     } catch (error) {
         if (error instanceof Error) {
-            res.status(400).json({ "error": error.message });
+            res.status(404).json({ "error": error.message });
         } else {
             res.status(500).json({ "mensaje": "Ha ocurrido un error al obtener el usuario por ID" });
         }
@@ -33,7 +33,7 @@ export const registerUsersController = async (req: Request, res: Response) => {
     try {
         const inputUser: IuserDto = req.body;
         const register = await createUser(inputUser);
-        res.status(201).json(register);
+        res.status(201).json({register});
     } catch (error) {
         if (error instanceof Error) {
             res.status(400).json({ "error": error.message });

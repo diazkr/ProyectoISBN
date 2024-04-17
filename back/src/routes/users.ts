@@ -1,5 +1,5 @@
 const {Router} = require("express")
-import { validateUserInput } from "../middleware/userMiddleware";
+import { validateUserInput, validateLogin } from "../middleware/userMiddleware";
 
 // Traer los controllers 
 
@@ -13,7 +13,7 @@ const usersRouter = Router();
 usersRouter.get("/", getUsersController);
 usersRouter.get("/:id", getUsersByIdController);
 usersRouter.post("/register",validateUserInput, registerUsersController);
-usersRouter.post("/login", loginUsersController);
+usersRouter.post("/login", validateLogin, loginUsersController);
 
 
 export {

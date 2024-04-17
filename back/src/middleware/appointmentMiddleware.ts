@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 
 export const validateAppointmentInput = (req: Request, res: Response, next: NextFunction) => {
-    const { date, time, userId } = req.body;
+    const { date, time, userId, description, especialist} = req.body;
 
-    if (!date || !time || !userId) {
+    if (!date || !time || !userId || !description || !especialist) {
         return res.status(400).json({ error: "Todos los campos son requeridos" });
     }
 

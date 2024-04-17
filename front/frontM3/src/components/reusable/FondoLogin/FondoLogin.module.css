@@ -1,0 +1,52 @@
+.mainContainer{ 
+    background: rgb(150,225,233);
+    background: linear-gradient(214deg, rgba(150,225,233,1) 6%, rgba(151,223,232,1) 25%, rgba(135,210,220,1) 50%, rgba(113,192,212,1) 72%); 
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: end;
+    height: 100%;
+    padding-top: 50px;
+    padding-right: 5%;
+    width: 100%;
+}
+
+.containerForm{
+    padding-bottom: 5%;
+
+
+}
+
+.containerRegister{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+    align-items: baseline;
+    padding: 0.5em;
+}
+
+.containerRegister{
+    font-size: 1em;
+    font-weight: 500;
+    color: #113f46;
+}
+
+.containerRegister button{
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.3em;
+    color:aliceblue;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    border-radius: 12px;
+    background-color: #2b7b8f;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: 0.3s;
+}
+
+.containerRegister button:hover{
+    background-color: #296775;
+    transform: scale(0.95);
+
+}

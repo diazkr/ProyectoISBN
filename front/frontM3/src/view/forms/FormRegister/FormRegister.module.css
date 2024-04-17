@@ -1,0 +1,128 @@
+
+.Container{
+    margin-top: 100px;
+    background-color:#f7fafd ;
+    display: flex;
+    align-items: center;
+    padding: 2em;
+    max-width: 100%; 
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: inline-block;
+}
+
+.EachInput{
+    display: flex;
+    flex-direction: column !important;
+    padding-top: 0.8em;
+    position: relative;
+}
+
+
+.EachInput input{
+    background-color: #f7fafd ;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 15px;
+    padding-left: 2em;
+    height: 2.3em;
+    border: 1px solid #0e74908e;
+    padding-right: 1.2em;
+}
+
+.EachInput label{
+    color: #195461;
+    font-weight: 500;
+}
+
+.DoubleInput{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+
+.Centrar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.icon{
+    position: absolute;
+    left: 10px; 
+    top: 2.3em;
+    transform: translateY(50%); 
+    color: #319ba9d5;
+}
+
+.MainIcon{
+    font-size: 2em;
+    color: #319ca9;
+}
+
+.EachInput h3{
+
+    color: #319ca9;
+    font-weight: 600;
+    font-family: "poppins", sans-serif;
+    font-size: 1.5em;
+}
+
+.Centrar button{
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: #319ca9;
+    color: aliceblue;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.3s;
+
+}
+
+
+.Centrar button:hover{
+    background-color: #195461;
+    transform: scale(0.98);
+}
+
+.Centrar .iconButton{
+    margin-right: 0.5em;
+    margin-bottom: 0.2em;
+}
+
+.Container span{
+    color: rgb(177, 15, 15);
+    font-size: 0.8em;
+}
+.errorBorder {
+    border: 1px solid rgb(177, 15, 15) !important;
+}
+
+
+.Centrar button:disabled {
+    background-color: #379aa780;
+    cursor: not-allowed;
+  }
+  
+
+.mensaje{
+    color: #319ba9fa ;
+    text-align: center;
+    margin-top: 1em;
+    font-weight: 500;
+
+}
+
+.selectEspecialidad {
+
+    background-color: #f7fafd ;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 15px;
+    padding-left: 2em;
+    height: 2.3em;
+    border: 1px solid #0e74908e;
+}

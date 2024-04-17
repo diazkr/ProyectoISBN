@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 0.4em 0;
+    box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
+    top: 0;
+  }
+  
+  
+.header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
+    color: #319ca9;
+}
+  
+.header .logo a {
+    text-decoration: none;
+    color: #319ca9; 
+}
+
+
+
+.appointmentBtn {
+    margin-left: 25px;
+    background: #319ca9;
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 1.08em;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+.appointmentBtn:hover {
+    background: #2b7f8f;
+    color: #fff;
+}
+  
+@media (max-width: 768px) {
+    .appointmentBtn {
+      margin: 0 15px 0 0;
+      padding: 6px 18px;
+    }
+}
+
+/* SOLO DEL NAVBAR  */
+
+.navbar {
+    padding: 0;
+  }
+  
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+  
+.navbar li {
+    position: relative;
+}
+  
+.navbar>ul>li {
+    position: relative;
+    white-space: nowrap;
+    padding: 8px 0 8px 20px;
+}
+  
+.navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1em;
+    color: #142f38;
+    white-space: nowrap;
+    transition: 0.3s;
+    border-bottom: 2px solid #fff;
+    padding: 5px 2px;
+}
+  
+.navbar a i,
+.navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+}
+  
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+    color: #319ca9;
+    border-color: #319ca9;
+}
+
+
+/* PARTE DEL MOBILE  */
+
+
+.mobileNavToggle {
+    color: #2c4964;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+}
+  
+.mobileNavToggle.bi-x {
+    color: #fff;
+}
+  
+@media (max-width: 991px) {
+    .mobileNavToggle {
+      display: block;
+    }
+  
+    .navbar ul {
+      display: none;
+    }
+}
+  
+.navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(6, 40, 71, 0.9);
+    transition: 0.3s;
+    z-index: 999;
+}
+  
+.navbar-mobile .mobileNavToggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+  
+.navbar-mobile ul {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.3s;
+}
+  
+.navbar-mobile>ul>li {
+    padding: 0;
+}
+  
+.navbar-mobile a,
+.navbar-mobile a:focus {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #2c4964;
+    border: none;
+}
+  
+.iconNav{
+    color: #296775;
+    font-size: 1.2em !important;
+    margin-right: 0.3em;
+    padding-bottom: 0.1em;
+}
