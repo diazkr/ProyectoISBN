@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 40em !important;
 }
 
 .mainContainer p{

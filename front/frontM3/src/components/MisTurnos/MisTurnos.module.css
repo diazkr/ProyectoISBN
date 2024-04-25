@@ -24,6 +24,9 @@
     white-space: nowrap;
     justify-content: flex-start;
 
+    min-height: 30em !important;
+    margin-bottom: 4em;
+
 
 }
 
