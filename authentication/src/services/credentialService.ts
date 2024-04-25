@@ -21,7 +21,7 @@ export const verifyCredential = async (credential: {username: string, password:s
     const foundCredential = await CredentialModel.findOneBy({username});
 
         if (foundCredential && foundCredential.password === password && foundCredential.username=== username) {
-            const response = {login: true, id: foundCredential.id}
+            const response = {login: true, id: foundCredential.userId}
             return response;
         } else {
             throw new Error("Credenciales incorrectas");
