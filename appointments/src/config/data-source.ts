@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
     entities: [Appointment],
     subscribers: [],
     migrations: [],
-    //dropSchema: true
+    dropSchema: true
 })
 
 export const AppointmentModel = AppDataSource.getRepository(Appointment)

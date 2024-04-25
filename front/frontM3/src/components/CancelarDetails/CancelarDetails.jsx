@@ -8,7 +8,7 @@ const CancelarDetails =({id, date, time, closeHandlerCancel, actualizarTurnos })
 
     const CancelTurn = async()=>{
         try {
-            const response = await axios.post(`http://localhost:3000/appointment/cancel/${id}`)
+            const response = await axios.post(`http://localhost:3001/appointment/cancel/${id}`)
             setMensaje("Se ha cancelado la cita")
             setCancel(true);
             actualizarTurnos();

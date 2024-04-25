@@ -1,7 +1,6 @@
 import styles from "../FormRegister/FormRegister.module.css"
 import { useState} from "react";
 import axios from "axios";
-import { FaHandHoldingMedical } from "react-icons/fa6";
 import {ValidateFullData} from "../../../helpers/function/forms/validateForm";
 import { useNavigate } from "react-router-dom";
 import { addUserLogin } from '../../../redux/userLoginSlice'
@@ -35,9 +34,9 @@ const FormLogin=()=>{
             setMensaje('Todos los campos son requeridos');
         } else {
             try {
-                const response = await axios.post("http://localhost:3000/users/login", userData);
+                const response = await axios.post("http://localhost:3003/credential/login", userData);
                 setMensaje("Login exitoso")
-                clickHandler(response.data.user)
+                clickHandler(response.data)
                 
                 navigate("/citas")
             } catch (error) {

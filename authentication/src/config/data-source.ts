@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
     entities: [Credential],
     subscribers: [],
     migrations: [],
-    //dropSchema: true
+    dropSchema: true
 })
 
 export const CredentialModel = AppDataSource.getRepository(Credential)

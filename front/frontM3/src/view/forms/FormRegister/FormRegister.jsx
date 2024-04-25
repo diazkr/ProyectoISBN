@@ -1,7 +1,6 @@
 import styles from "./FormRegister.module.css"
 import axios from "axios";
 import { useEffect, useState} from "react";
-import { FaHandHoldingMedical } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { validate, ValidateFullData} from "../../../helpers/function/forms/validateForm";
 import { addUserLogin } from '../../../redux/userLoginSlice'
@@ -25,10 +24,18 @@ const FormRegister=()=>{
         name: '',
         birthdate: '',
         nDni: '',
-        email: '',
-        username: '',
-        password: ''
+        email: ''
     })
+
+    const [userRegister, setUserRegister]= useState({
+        username: '',
+        password: '', 
+        userId: ''
+    })
+
+
+
+
     const [errors, setErrors] = useState({
         name: '',
         birthdate: '',
@@ -47,6 +54,27 @@ const FormRegister=()=>{
         setErrors(validationErrors);
     }, [userData])
 
+    useEffect(() => {
+        const sendUserRegister = async () => {
+            try {
+                const respuestaRegister = await axios.post("http://localhost:3003/credential/register/", userRegister);
+                console.log(respuestaRegister);
+                setMensaje("Registro Exitoso");
+                navigate("/citas");
+            } catch (error) {
+                if (error instanceof Error && error.response) {
+                    setMensaje(error.response.data.error);
+                } else {
+                    setMensaje('Ha ocurrido un error desconocido');
+                }
+            }
+        };
+    
+        if (userRegister.username !== '' && userRegister.password !== '' && userRegister.userId !== '') {
+            sendUserRegister();
+        }
+    }, [userRegister, navigate]);
+
     
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -54,8 +82,17 @@ const FormRegister=()=>{
             setMensaje('Todos los campos son requeridos');
         } else {
             try {
-                const respuesta = await axios.post("http://localhost:3000/users/register", userData);
-                clickHandler(respuesta.data.register)
+                const respuesta = await axios.post("http://localhost:3002/users/register", userData);
+                clickHandler(respuesta.data.register);
+                setUserRegister(prevState => ({
+                    ...prevState,
+                    userId: respuesta.data.register.id
+                }));
+
+                const respuestaRegister = await axios.post("http://localhost:3003/credential/register/", userRegister );
+
+                console.log(respuestaRegister)
+
                 setMensaje("Registro Exitoso");
                 navigate("/citas")
             } catch (error) {
@@ -72,6 +109,10 @@ const FormRegister=()=>{
 
         setUserData({
             ...userData,
+            [name]: value
+        })
+        setUserRegister({
+            ...userRegister,
             [name]: value
         })
         const errors = validate(userData)
@@ -169,7 +210,7 @@ const FormRegister=()=>{
                             <label>Username</label>
                             <input
                                 type= "text"
-                                value={userData.username}
+                                value={userRegister.username}
                                 name = "username" 
                                 placeholder="Crea tu usuario" 
                                 onChange={handleChange}
@@ -186,7 +227,7 @@ const FormRegister=()=>{
                             <label>Contraseña</label>
                             <input
                                 type= "password"
-                                value={userData.password}
+                                value={userRegister.password}
                                 name = "password" 
                                 placeholder="******"  
                                 onChange={handleChange}

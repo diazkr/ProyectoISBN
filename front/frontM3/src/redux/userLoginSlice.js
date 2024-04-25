@@ -9,7 +9,8 @@ export const userLoginSlice = createSlice({
     initialState,
     reducers: {
         addUserLogin: (state,action)=>{
-            state.userLogin = action.payload
+            console.log(action.payload)
+            state.userLogin = { ...action.payload };
 
         }
     }

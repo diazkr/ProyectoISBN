@@ -21,19 +21,22 @@ const MisTurnos =()=>{
     const userGlobal = useSelector((state)=>(state.userLogin))
     const userLogin = userGlobal.userLogin.id;
 
+    console.log(userLogin)
+
     const [myTurns, setMyTurns] = useState([]);
     
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        const fetchData = async()=>{
+        const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/users/${userLogin}`)
-                setMyTurns(dispatch(addAppointment(response.data.appointments)).payload)
-
-
+                const response = await axios.get("http://localhost:3001/appointment");
+                const responseData = response.data
+                const responseReal = responseData.filter(cita => userLogin == cita.userId);
+                console.log(responseReal);
+                setMyTurns(dispatch(addAppointment(responseReal)).payload);
             } catch (error) {
-                throw Error("Error al traer los datos", error)
+                throw new Error("Error al traer los datos", error);
             }
         }
 
@@ -72,10 +75,12 @@ const MisTurnos =()=>{
 
     const actualizarTurnos = async () => {
         try {
-          const response = await axios.get(`http://localhost:3000/users/${userLogin}`);
-          setMyTurns(dispatch(addAppointment(response.data.appointments)).payload);
+            const response = await axios.get("http://localhost:3001/appointment");
+            const responseReal = response.data.filter(cita => userLogin === cita.userId);
+            console.log(responseReal);
+            setMyTurns(dispatch(addAppointment(responseReal)).payload);
         } catch (error) {
-          console.error("Error al actualizar los turnos después de cancelar la cita:", error);
+            throw new Error("Error al traer los datos", error);
         }
       };
 

@@ -40,7 +40,7 @@ const FormAppointment=({userLogin})=>{
             setMensaje('Todos los campos son requeridos');
         } else {
             try {
-                const respuesta = await axios.post("http://localhost:3000/appointment/schedule", userData);
+                const respuesta = await axios.post("http://localhost:3001/appointment/schedule", userData);
                 setMensaje("Registro Exitoso");
                 navigate("/citas")
             } catch (error) {
