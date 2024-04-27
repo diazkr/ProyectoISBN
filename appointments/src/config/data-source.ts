@@ -3,7 +3,7 @@ import { Appointment } from "../entities/Appointment"
 
 export const AppDataSource = new DataSource({
     type: "postgres",
-    host: "localhost",
+    host: "34.86.252.165",
     port: 5432,
     username: "postgres",
     password: "123",

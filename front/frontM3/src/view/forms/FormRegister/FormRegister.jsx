@@ -57,8 +57,10 @@ const FormRegister=()=>{
     useEffect(() => {
         const sendUserRegister = async () => {
             try {
-                const respuestaRegister = await axios.post("http://localhost:3003/credential/register/", userRegister);
-                console.log(respuestaRegister);
+                const respuestaRegister = await axios.post("http://localhost:3003/credential/register/", userRegister );
+
+                console.log(respuestaRegister)
+
                 setMensaje("Registro Exitoso");
                 navigate("/citas");
             } catch (error) {
