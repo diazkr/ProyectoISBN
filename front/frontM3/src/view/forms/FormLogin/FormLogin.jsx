@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { USER_AUTH } from "../../../../apis";
 
 
 const FormLogin=()=>{
@@ -34,7 +35,7 @@ const FormLogin=()=>{
             setMensaje('Todos los campos son requeridos');
         } else {
             try {
-                const response = await axios.post("http://localhost:3003/credential/login", userData);
+                const response = await axios.post(USER_AUTH, userData);
                 setMensaje("Login exitoso")
                 clickHandler(response.data)
                 

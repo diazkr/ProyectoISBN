@@ -1,6 +1,7 @@
 import styles from "./CancelarDetails.module.css"
 import axios from "axios";
 import { useState} from "react";
+import { CANCEL_APPOINTMENTS } from "../../../apis";
 
 const CancelarDetails =({id, date, time, closeHandlerCancel, actualizarTurnos })=>{
     const [cancel, setCancel] = useState(false)
@@ -8,7 +9,7 @@ const CancelarDetails =({id, date, time, closeHandlerCancel, actualizarTurnos })
 
     const CancelTurn = async()=>{
         try {
-            const response = await axios.post(`http://localhost:3001/appointment/cancel/${id}`)
+            const response = await axios.post(`${CANCEL_APPOINTMENTS}${id}`)
             setMensaje("Se ha cancelado la cita")
             setCancel(true);
             actualizarTurnos();

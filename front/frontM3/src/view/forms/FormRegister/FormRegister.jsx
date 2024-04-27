@@ -12,6 +12,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { MdOutlineNumbers } from "react-icons/md";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { CREATE_USER, REGISTER_LOGIN } from "../../../../apis";
 
 const FormRegister=()=>{
     const dispatch = useDispatch()
@@ -57,7 +58,7 @@ const FormRegister=()=>{
     useEffect(() => {
         const sendUserRegister = async () => {
             try {
-                const respuestaRegister = await axios.post("http://localhost:3003/credential/register/", userRegister );
+                const respuestaRegister = await axios.post(REGISTER_LOGIN, userRegister );
 
                 console.log(respuestaRegister)
 
@@ -84,14 +85,14 @@ const FormRegister=()=>{
             setMensaje('Todos los campos son requeridos');
         } else {
             try {
-                const respuesta = await axios.post("http://localhost:3002/users/register", userData);
+                const respuesta = await axios.post(CREATE_USER, userData);
                 clickHandler(respuesta.data.register);
                 setUserRegister(prevState => ({
                     ...prevState,
                     userId: respuesta.data.register.id
                 }));
 
-                const respuestaRegister = await axios.post("http://localhost:3003/credential/register/", userRegister );
+                const respuestaRegister = await axios.post(REGISTER_LOGIN, userRegister );
 
                 console.log(respuestaRegister)
 
