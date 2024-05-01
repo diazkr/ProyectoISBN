@@ -11,6 +11,7 @@ import CancelarDetails from "../CancelarDetails/CancelarDetails"
 import { addAppointment } from "../../redux/appointmentSlice"
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
+import { ALL_APPOINTMENTS } from "../../../apis"
 
 
 
@@ -30,7 +31,7 @@ const MisTurnos =()=>{
     useEffect(()=>{
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:3001/appointment");
+                const response = await axios.get(ALL_APPOINTMENTS);
                 const responseData = response.data
                 const responseReal = responseData.filter(cita => userLogin == cita.userId);
                 console.log(responseReal);
@@ -75,7 +76,7 @@ const MisTurnos =()=>{
 
     const actualizarTurnos = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/appointment");
+            const response = await axios.get(ALL_APPOINTMENTS);
             const responseReal = response.data.filter(cita => userLogin === cita.userId);
             console.log(responseReal);
             setMyTurns(dispatch(addAppointment(responseReal)).payload);

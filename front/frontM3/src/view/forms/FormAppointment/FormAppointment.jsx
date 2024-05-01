@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { validate, ValidateFullData} from "../../../helpers/function/forms/validateForm";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { CREATE_APPOINTMETS } from "../../../../apis";
 
 const FormAppointment=({userLogin})=>{
     const navigate = useNavigate()
@@ -40,7 +41,7 @@ const FormAppointment=({userLogin})=>{
             setMensaje('Todos los campos son requeridos');
         } else {
             try {
-                const respuesta = await axios.post("http://localhost:3001/appointment/schedule", userData);
+                const respuesta = await axios.post(CREATE_APPOINTMETS, userData);
                 setMensaje("Registro Exitoso");
                 navigate("/citas")
             } catch (error) {
