@@ -1,4 +1,4 @@
-export const validate = (input) => {
+const validate = (input) => {
     const errors = {};
 
     ///Valicación del email
@@ -55,7 +55,7 @@ export const validate = (input) => {
     return errors;
 }
 
-export const ValidateFullData=(objeto)=>{
+ const ValidateFullData=(objeto)=>{
     for (let key in objeto) {
         if (!objeto[key]) {
           return false;
@@ -63,3 +63,6 @@ export const ValidateFullData=(objeto)=>{
       }
       return true;
 }
+
+module.exports = ValidateFullData;
+

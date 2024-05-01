@@ -1,0 +1,40 @@
+image: node:20-alpine
+
+stages:
+  - build
+  - test
+  - package
+
+variables:
+  CACHE_DIR: $CI_PROJECT_DIR/.cache
+
+cache:
+  paths:
+    - node_modules/
+    - .cache/
+
+
+before_script:
+  - npm install
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - public/
+
+test:
+  stage: test
+  script:
+    - npm run test
+
+package:
+  stage: package
+  script:
+    - tar -czf package-${CI_COMMIT_REF_NAME}-${CI_PIPELINE_ID}.tar.gz public/* 
+  artifacts:
+    paths:
+      - package-${CI_COMMIT_REF_NAME}-${CI_PIPELINE_ID}.tar.gz
+    expire_in: 1 week
